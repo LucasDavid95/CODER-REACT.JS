@@ -7,12 +7,20 @@
   background-color: rgba(0, 0, 0, 0.911);
 }
 
+.navbarUl {
+  display: flex;
+  gap: 40px;
+}
+
 .navbarLi {
   list-style: none;
 }
 
 .navbarAn {
-  display: flex;
   color: white;
   text-decoration: none;
+}
+
+.navbarImg {
+  width: 11rem;
 }

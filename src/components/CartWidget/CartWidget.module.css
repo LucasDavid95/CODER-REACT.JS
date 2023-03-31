@@ -1,3 +1,7 @@
 .cart {
   color: white;
 }
+
+.cartSpan {
+  position: relative;
+}

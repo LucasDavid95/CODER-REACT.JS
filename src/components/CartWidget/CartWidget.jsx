@@ -6,6 +6,7 @@ const CartWidget = () => {
   return (
     <div className={styles.cart}>
       <ShoppingCartIcon />
+      <span className={styles.cartSpan}>0</span>
     </div>
   );
 };
