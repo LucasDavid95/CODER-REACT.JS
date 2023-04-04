@@ -1,7 +1,9 @@
 .cart {
   color: white;
+  position: relative;
+  margin-right: 3px;
 }
 
-.cartSpan {
-  position: relative;
+.cartContainer {
+  margin-right: 1rem;
 }
