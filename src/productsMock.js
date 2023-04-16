@@ -10,7 +10,7 @@ export const products = [
   },
   {
     id: 2,
-    title: "Dark Souls 2 - Scholar of the First Sin",
+    title: "Dark Souls 2 - SoFS",
     price: 39.99,
     stock: 5,
     category: "Action RPG",
@@ -66,7 +66,7 @@ export const products = [
   },
   {
     id: 9,
-    title: "Death Stranding - Director Cut",
+    title: "Death Stranding",
     price: 49.99,
     stock: 5,
     category: "Open World",
@@ -74,11 +74,11 @@ export const products = [
   },
   {
     id: 10,
-    title: "FIFA 23",
-    price: 59.99,
+    title: "Little Nightmares",
+    price: 19.99,
     stock: 5,
-    category: "Sports",
-    img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686518/React/FIFA23_j2qdrt.png",
+    category: "Horror",
+    img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1681614943/littlen_foujm6.png",
   },
   //Software
   {
@@ -107,16 +107,16 @@ export const products = [
   },
   {
     id: 14,
-    title: "Adobe Photoshop Elements 2023",
-    price: 19.99,
+    title: "Adobe Photoshop 2023",
+    price: 14.99,
     stock: 5,
     category: "Service",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686518/React/PS_jmr08n.png",
   },
   {
     id: 15,
-    title: "Adobe Premiere Elements 2023",
-    price: 19.99,
+    title: "Adobe Premiere 2023",
+    price: 14.99,
     stock: 5,
     category: "Service",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686519/React/AP_yg7c2i.png",

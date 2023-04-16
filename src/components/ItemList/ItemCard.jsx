@@ -10,18 +10,20 @@ import {
 
 const ItemCard = ({ item }) => {
   return (
-    <Card sx={{ marginBottom: "30px", width: 300, height: 600 }}>
+    <Card sx={{ marginBottom: "40px", width: 300, height: 600 }}>
       <CardMedia sx={{ height: 400 }} image={item.img} title="green iguana" />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h6" component="div">
           {item.title}
         </Typography>
-        <Typography variant="body2" color="primary">
+        <Typography variant="h5" color="primary">
           {item.price}
         </Typography>
       </CardContent>
-      <CardActions style={{ height: 100 }}>
-        <Button size="small">Details</Button>
+      <CardActions sx={{ position: "relative", height: 100 }}>
+        <Button variant="contained" size="small">
+          Details
+        </Button>
       </CardActions>
     </Card>
   );
