@@ -1,5 +1,4 @@
 export const products = [
-  //PS4
   {
     id: 1,
     title: "Dark Souls REMASTER",
@@ -39,7 +38,6 @@ export const products = [
     category: "Action RPG",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686518/React/Sekiro_mrtmmm.png",
   },
-  //PS5
   {
     id: 6,
     title: "Demon Souls",
@@ -80,7 +78,6 @@ export const products = [
     category: "Horror",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1681614943/littlen_foujm6.png",
   },
-  //Software
   {
     id: 11,
     title: "Windows 10 Home",

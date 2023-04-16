@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-import { products } from "../../productsMock";
+import axios from "axios";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const task = new Promise((resolve, reject) => {
-      resolve(products);
-    });
-
-    task.then((res) => setItems(res)).catch((error) => console.log(error));
+    let data = axios.get("http://localhost:5000/products");
+    data.then((res) => setItems(res.data));
   }, []);
 
   return (
