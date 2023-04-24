@@ -1,38 +1,51 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 import CartWidget from "../CartWidget/CartWidget";
+import { Outlet, Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className={styles.containerNavbar}>
-      <img
-        className={styles.navbarImg}
-        src="https://res.cloudinary.com/drpr8hciz/image/upload/v1680216111/React/IMG1_sxplqd.png"
-        alt="Logo"
-      />
-      <ul className={styles.navbarUl}>
-        <li className={styles.navbarLi}>
-          <a href="*" className={styles.navbarAn}>
+    <div>
+      <div className={styles.containerNavbar}>
+        <Link to="/">
+          <img
+            className={styles.navbarImg}
+            src="https://res.cloudinary.com/drpr8hciz/image/upload/v1682358957/asd_rqx7es.png"
+            alt="Logo"
+          />
+        </Link>
+        <ul className={styles.navbarUl}>
+          <Link style={{ color: "white", textDecoration: "none" }} to="/">
             Home
-          </a>
-        </li>
-        <li className={styles.navbarLi}>
-          <a href="*" className={styles.navbarAn}>
-            Games
-          </a>
-        </li>
-        <li className={styles.navbarLi}>
-          <a href="*" className={styles.navbarAn}>
+          </Link>
+          <Link
+            style={{ color: "white", textDecoration: "none" }}
+            to="/category/PS4"
+          >
+            PS4
+          </Link>
+          <Link
+            style={{ color: "white", textDecoration: "none" }}
+            to="/category/PS5"
+          >
+            PS5
+          </Link>
+          <Link
+            style={{ color: "white", textDecoration: "none" }}
+            to="/category/Software"
+          >
             Software
-          </a>
-        </li>
-        <li className={styles.navbarLi}>
-          <a href="*" className={styles.navbarAn}>
+          </Link>
+          <Link
+            style={{ color: "white", textDecoration: "none" }}
+            to="/category/Contact"
+          >
             Contact
-          </a>
-        </li>
-      </ul>
-      <CartWidget />
+          </Link>
+        </ul>
+        <CartWidget />
+      </div>
+      <Outlet />
     </div>
   );
 };

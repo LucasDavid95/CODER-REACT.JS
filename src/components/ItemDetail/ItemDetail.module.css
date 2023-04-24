@@ -1,0 +1,19 @@
+.containerItemdetail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.itemDetailimg {
+  width: 400px;
+}
+
+.itemDetailtitle {
+  color: rgba(0, 0, 0, 0.911);
+}
+
+.itemDetailprice {
+  color: #2196f3;
+}

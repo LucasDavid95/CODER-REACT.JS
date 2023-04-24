@@ -4,7 +4,7 @@ export const products = [
     title: "Dark Souls REMASTER",
     price: 39.99,
     stock: 5,
-    category: "Action RPG",
+    category: "PS4",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686519/React/DS1_slxuqz.png",
   },
   {
@@ -12,7 +12,7 @@ export const products = [
     title: "Dark Souls 2 - SoFS",
     price: 39.99,
     stock: 5,
-    category: "Action RPG",
+    category: "PS4",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686520/React/DS2_hgw1nc.png",
   },
   {
@@ -20,14 +20,14 @@ export const products = [
     title: "Dark Souls 3",
     price: 59.99,
     stock: 5,
-    category: "Action RPG",
+    category: "PS4",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686521/React/DS3_yogfzq.png",
   },
   {
     id: 4,
     title: "BloodBorne - GOTY Edition",
     price: 34.99,
-    category: "Action RPG",
+    category: "PS4",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686518/React/BB_ta0fwh.png",
   },
   {
@@ -35,7 +35,7 @@ export const products = [
     title: "Sekiro - Shadows Die Twice",
     price: 59.99,
     stock: 5,
-    category: "Action RPG",
+    category: "PS4",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686518/React/Sekiro_mrtmmm.png",
   },
   {
@@ -43,7 +43,7 @@ export const products = [
     title: "Demon Souls",
     price: 69.99,
     stock: 5,
-    category: "Action RPG",
+    category: "PS5",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686520/React/DS_elffbg.png",
   },
   {
@@ -51,7 +51,7 @@ export const products = [
     title: "ELDEN RING",
     price: 59.99,
     stock: 5,
-    category: "Action RPG",
+    category: "PS5",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686518/React/ER_quhwuj.png",
   },
   {
@@ -59,7 +59,7 @@ export const products = [
     title: "Horizon - Forbidden West",
     price: 59.99,
     stock: 5,
-    category: "Open World",
+    category: "PS5",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686519/React/HOR_tcqdx1.png",
   },
   {
@@ -67,7 +67,7 @@ export const products = [
     title: "Death Stranding",
     price: 49.99,
     stock: 5,
-    category: "Open World",
+    category: "PS5",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686519/React/DSTRA_ddlrcl.png",
   },
   {
@@ -75,7 +75,7 @@ export const products = [
     title: "Little Nightmares",
     price: 19.99,
     stock: 5,
-    category: "Horror",
+    category: "PS5",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1681614943/littlen_foujm6.png",
   },
   {
@@ -83,7 +83,7 @@ export const products = [
     title: "Windows 10 Home",
     price: 19.99,
     stock: 5,
-    category: "OS",
+    category: "Software",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686519/React/w10_vnndef.png",
   },
   {
@@ -91,7 +91,7 @@ export const products = [
     title: "Windows 11 Pro",
     price: 19.99,
     stock: 5,
-    category: "OS",
+    category: "Software",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686520/React/w11_dvhedl.png",
   },
   {
@@ -99,7 +99,7 @@ export const products = [
     title: "Microsoft Office 365 Proplus",
     price: 14.99,
     stock: 5,
-    category: "Service",
+    category: "Software",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686518/React/MO_parbfe.png",
   },
   {
@@ -107,7 +107,7 @@ export const products = [
     title: "Adobe Photoshop 2023",
     price: 14.99,
     stock: 5,
-    category: "Service",
+    category: "Software",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686518/React/PS_jmr08n.png",
   },
   {
@@ -115,7 +115,7 @@ export const products = [
     title: "Adobe Premiere 2023",
     price: 14.99,
     stock: 5,
-    category: "Service",
+    category: "Software",
     img: "https://res.cloudinary.com/drpr8hciz/image/upload/v1680686519/React/AP_yg7c2i.png",
   },
 ];
