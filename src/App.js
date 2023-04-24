@@ -3,20 +3,23 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemListContainer from "./components/ItemList/ItemListContainer";
 import Navbar from "./components/Navbar/Navbar";
 import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
+import Error from "./components/Error/Error";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<Navbar />}>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route
-            path="/category/:categoryName"
-            element={<ItemListContainer />}
-          />
-          <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
-          <Route path="/sign-up" element={<h1>Sign Up</h1>} />
-          <Route path="*" element={<h1>Error 404 Not Found</h1>} />
+          <Route element={<Footer />}>
+            <Route path="/" element={<ItemListContainer />} />
+            <Route
+              path="/category/:categoryName"
+              element={<ItemListContainer />}
+            />
+            <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
+            <Route path="*" element={<Error />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
