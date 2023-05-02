@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import Error from "./components/Error/Error";
 import Footer from "./components/Footer/Footer";
+import CartContainer from "./components/Cart/CartContainer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               path="/category/:categoryName"
               element={<ItemListContainer />}
             />
+            <Route path="/cart" element={<CartContainer />} />
             <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
             <Route path="*" element={<Error />} />
           </Route>
