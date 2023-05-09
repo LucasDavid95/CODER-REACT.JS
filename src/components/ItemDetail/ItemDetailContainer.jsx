@@ -13,11 +13,15 @@ const ItemDetailContainer = () => {
     setProduct(found);
   }, [id]);
 
-  console.log(product);
+  const onAdd = (quantity) => {
+    console.log(
+      `${quantity} unit/s of the product ${product.title} were added to the cart`
+    );
+  };
 
   return (
     <div>
-      <ItemDetail product={product} />
+      <ItemDetail product={product} onAdd={onAdd} />
     </div>
   );
 };

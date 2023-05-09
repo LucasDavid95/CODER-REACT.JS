@@ -36,12 +36,6 @@ const Navbar = () => {
           >
             Software
           </Link>
-          <Link
-            style={{ color: "white", textDecoration: "none" }}
-            to="/category/Contact"
-          >
-            Contact
-          </Link>
         </ul>
         <CartWidget />
       </div>
