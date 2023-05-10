@@ -8,12 +8,14 @@ const ItemDetail = ({ product, onAdd }) => {
   return (
     <div className={styles.containerItemdetail}>
       <img
-        className={styles.itemDetailimg}
+        style={{ width: "23rem", marginTop: "3rem" }}
         src={product.img}
         alt="product detail"
       ></img>
-      <h1 className={styles.itemDetailtitle}>{product.title}</h1>
-      <h2 className={styles.itemDetailprice}>{product.price}</h2>
+      <h1 style={{ color: "rgba(0, 0, 0, 0.911" }}>{product.title}</h1>
+      <h2 style={{ marginBottom: "2rem", color: "#2196f3" }}>
+        US${product.price}
+      </h2>
       <div className={{ display: "flex" }}>
         <CounterContainer stock={product.stock} onAdd={onAdd} />
       </div>

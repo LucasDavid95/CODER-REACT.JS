@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import { products } from "../../productsMock";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
+
+  const { addToCart } = useContext(CartContext);
 
   const { id } = useParams();
 
@@ -14,9 +17,12 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   const onAdd = (quantity) => {
-    console.log(
-      `${quantity} unit/s of the product ${product.title} were added to the cart`
-    );
+    let data = {
+      ...product,
+      quantity: quantity,
+    };
+
+    addToCart(data);
   };
 
   return (

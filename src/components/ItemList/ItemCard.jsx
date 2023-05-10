@@ -18,7 +18,7 @@ const ItemCard = ({ item }) => {
           {item.title}
         </Typography>
         <Typography variant="h5" color="primary">
-          {item.price}
+          US${item.price}
         </Typography>
       </CardContent>
       <CardActions sx={{ position: "relative", height: 100 }}>

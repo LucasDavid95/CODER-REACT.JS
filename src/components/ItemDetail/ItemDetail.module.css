@@ -5,17 +5,3 @@
   flex-direction: column;
   height: 100vh;
 }
-
-.itemDetailimg {
-  margin-top: 3rem;
-  width: 500px;
-}
-
-.itemDetailtitle {
-  color: rgba(0, 0, 0, 0.911);
-}
-
-.itemDetailprice {
-  margin-bottom: 2rem;
-  color: #2196f3;
-}
