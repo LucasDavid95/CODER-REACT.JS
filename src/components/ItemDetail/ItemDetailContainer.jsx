@@ -3,11 +3,12 @@ import ItemDetail from "./ItemDetail";
 import { products } from "../../productsMock";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import Swal from "sweetalert2";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
 
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, getQuantityById } = useContext(CartContext);
 
   const { id } = useParams();
 
@@ -23,11 +24,24 @@ const ItemDetailContainer = () => {
     };
 
     addToCart(data);
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Successfully added",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
+
+  let totalQuantity = getQuantityById(product.id);
 
   return (
     <div>
-      <ItemDetail product={product} onAdd={onAdd} />
+      <ItemDetail
+        product={product}
+        onAdd={onAdd}
+        totalQuantity={totalQuantity}
+      />
     </div>
   );
 };
