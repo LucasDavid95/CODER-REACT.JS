@@ -27,8 +27,8 @@ const ItemDetailContainer = () => {
     Swal.fire({
       position: "center",
       icon: "success",
-      title: "Successfully added",
-      showConfirmButton: false,
+      title: "Product added successfully",
+      showConfirmButton: true,
       timer: 1500,
     });
   };

@@ -7,7 +7,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 import { Link } from "react-router-dom";
 
-const Cart = ({ cart, clearCart, deleteProductById, total }) => {
+const Cart = ({ cart, clearCartWithAlert, deleteProductById, total }) => {
   return (
     <div style={{ height: "100vh" }}>
       {cart.map((product) => {
@@ -32,19 +32,34 @@ const Cart = ({ cart, clearCart, deleteProductById, total }) => {
 
       {cart.length > 0 ? (
         <div style={{ display: "flex", gap: "20px", marginTop: "1rem" }}>
-          <Button style={{ fontSize: "10px", gap: "5px" }} variant="contained">
+          <Button
+            style={{ fontSize: "10px", gap: "5px" }}
+            variant="contained"
+            color="success"
+          >
             <h3 style={{ color: "white" }}>Proceed to Checkout</h3>
             <ShoppingCartCheckoutIcon style={{ color: "white" }} />
           </Button>
 
           <Button
-            onClick={clearCart}
+            onClick={clearCartWithAlert}
             style={{ fontSize: "10px", gap: "5px" }}
             variant="contained"
+            color="error"
           >
             <h3 style={{ color: "white" }}>Clear Cart</h3>
             <RemoveShoppingCartIcon style={{ color: "white" }} />
           </Button>
+
+          <Link to="/">
+            <Button
+              style={{ fontSize: "10px", gap: "5px" }}
+              variant="contained"
+            >
+              <h3 style={{ color: "white" }}>Continue Shopping</h3>
+              <AddShoppingCartIcon style={{ color: "white" }} />
+            </Button>
+          </Link>
         </div>
       ) : (
         <Link to="/">
