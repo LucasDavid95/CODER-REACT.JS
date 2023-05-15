@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-import { products } from "../../productsMock";
 import { useParams } from "react-router-dom";
 import { PacmanLoader } from "react-spinners";
+import { db } from "../../firebaseConfig";
+
+import { getDocs, collection, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -10,16 +12,31 @@ const ItemListContainer = () => {
   const { categoryName } = useParams();
 
   useEffect(() => {
-    const productsFiltered = products.filter(
-      (prod) => prod.category === categoryName
-    );
-    const task = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(categoryName ? productsFiltered : products);
-      }, 1000);
-    });
+    let ask;
+    const itemCollection = collection(db, "products");
 
-    task.then((res) => setItems(res)).catch((error) => console.log(error));
+    if (categoryName) {
+      const itemsCollectionFiletered = query(
+        itemCollection,
+        where("category", "==", categoryName)
+      );
+      ask = itemsCollectionFiletered;
+    } else {
+      ask = itemCollection;
+    }
+
+    getDocs(ask)
+      .then((res) => {
+        const products = res.docs.map((product) => {
+          return {
+            ...product.data(),
+            id: product.id,
+          };
+        });
+
+        setItems(products);
+      })
+      .catch((err) => console.log(err));
   }, [categoryName]);
 
   if (items.length === 0) {

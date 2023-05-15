@@ -7,7 +7,13 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 import { Link } from "react-router-dom";
 
-const Cart = ({ cart, clearCartWithAlert, deleteProductById, total }) => {
+const Cart = ({
+  cart,
+  clearCartWithAlert,
+  deleteProductById,
+  total,
+  navigate,
+}) => {
   return (
     <div style={{ height: "100vh" }}>
       {cart.map((product) => {
@@ -36,6 +42,7 @@ const Cart = ({ cart, clearCartWithAlert, deleteProductById, total }) => {
             style={{ fontSize: "10px", gap: "5px" }}
             variant="contained"
             color="success"
+            onClick={() => navigate("/checkout")}
           >
             <h3 style={{ color: "white" }}>Proceed to Checkout</h3>
             <ShoppingCartCheckoutIcon style={{ color: "white" }} />

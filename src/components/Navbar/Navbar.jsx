@@ -1,9 +1,28 @@
-import React from "react";
 import styles from "./Navbar.module.css";
 import CartWidget from "../CartWidget/CartWidget";
 import { Outlet, Link } from "react-router-dom";
+import { db } from "../../firebaseConfig";
+import { getDocs, collection } from "firebase/firestore";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [categories, setcategories] = useState([]);
+
+  useEffect(() => {
+    const categoriesCollection = collection(db, "categories");
+    getDocs(categoriesCollection)
+      .then((res) => {
+        let categoriesResult = res.docs.map((category) => {
+          return {
+            ...category.data(),
+            id: category.id,
+          };
+        });
+        setcategories(categoriesResult);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div>
       <div className={styles.containerNavbar}>
@@ -14,29 +33,19 @@ const Navbar = () => {
             alt="Logo"
           />
         </Link>
-        <ul className={styles.navbarUl}>
-          <Link style={{ color: "white", textDecoration: "none" }} to="/">
-            Home
-          </Link>
-          <Link
-            style={{ color: "white", textDecoration: "none" }}
-            to="/category/PS4"
-          >
-            PS4
-          </Link>
-          <Link
-            style={{ color: "white", textDecoration: "none" }}
-            to="/category/PS5"
-          >
-            PS5
-          </Link>
-          <Link
-            style={{ color: "white", textDecoration: "none" }}
-            to="/category/Software"
-          >
-            Software
-          </Link>
-        </ul>
+        <div className={styles.navbarUl}>
+          {categories.map((category) => {
+            return (
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                key={category.id}
+                to={category.path}
+              >
+                {category.title}
+              </Link>
+            );
+          })}
+        </div>
         <CartWidget />
       </div>
       <Outlet />
