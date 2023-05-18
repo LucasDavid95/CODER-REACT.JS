@@ -1,5 +1,13 @@
 import React from "react";
-import { Button, IconButton } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Hidden,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 import DisabledByDefaultIcon from "@mui/icons-material/DisabledByDefault";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
@@ -15,29 +23,58 @@ const Cart = ({
   navigate,
 }) => {
   return (
-    <div style={{ height: "100vh" }}>
-      {cart.map((product) => {
+    <div
+      style={{
+        height: "100vh",
+      }}
+    >
+      {cart.map((item) => {
         return (
-          <div key={product.id} style={{ border: "2px solid black" }}>
-            <h3>{product.title}</h3>
-            <h4>US${product.price}</h4>
-            <h4>{product.quantity}</h4>
-            <IconButton
-              variant="contained"
-              onClick={() => deleteProductById(product.id)}
+          <div key={item.id}>
+            <Card
+              sx={{
+                display: "flex",
+                justifyContent: "flex-start",
+                marginTop: 3,
+                height: 200,
+                gap: 5,
+                border: 1,
+              }}
             >
-              <DisabledByDefaultIcon
-                style={{ fontSize: "2rem" }}
-                variant="contained"
-                color="error"
-              />
-            </IconButton>
+              <CardMedia sx={{ width: 150 }} image={item.img} />
+              <CardContent sx={{ marginTop: "2rem" }}>
+                <Typography gutterBottom variant="h6" component="div">
+                  {item.title}
+                </Typography>
+                <Typography variant="h5" color="primary">
+                  US${item.price}
+                </Typography>
+                <IconButton
+                  variant="contained"
+                  onClick={() => deleteProductById(item.id)}
+                >
+                  <DisabledByDefaultIcon
+                    style={{ fontSize: "2rem" }}
+                    variant="contained"
+                    color="error"
+                  />
+                </IconButton>
+              </CardContent>
+            </Card>
           </div>
         );
       })}
 
       {cart.length > 0 ? (
-        <div style={{ display: "flex", gap: "20px", marginTop: "1rem" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "20px",
+            marginTop: "1rem",
+            marginLeft: "1rem",
+          }}
+        >
           <Button
             style={{ fontSize: "10px", gap: "5px" }}
             variant="contained"
@@ -69,15 +106,30 @@ const Cart = ({
           </Link>
         </div>
       ) : (
-        <Link to="/">
-          <Button style={{ fontSize: "10px", gap: "5px" }} variant="contained">
+        <Link style={{ display: "flex", justifyContent: "center" }} to="/">
+          <Button
+            style={{
+              fontSize: "10px",
+              gap: "5px",
+              marginTop: "10rem",
+            }}
+            variant="contained"
+          >
             <h3 style={{ color: "white" }}>Add Items to Cart</h3>
             <AddShoppingCartIcon style={{ color: "white" }} />
           </Button>
         </Link>
       )}
-
-      <h1>Total: US${total}</h1>
+      <h1
+        style={{
+          color: "rgba(0, 0, 0, 0.911)",
+          marginTop: "2rem",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        Total: US${total}
+      </h1>
     </div>
   );
 };
