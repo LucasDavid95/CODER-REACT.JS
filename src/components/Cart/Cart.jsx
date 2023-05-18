@@ -4,7 +4,6 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Hidden,
   IconButton,
   Typography,
 } from "@mui/material";

@@ -4,15 +4,15 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const FormCheckoutContainer = () => {
+  const checkoutFn = (data) => {};
+
   const { handleSubmit, handleChange, errors, values } = useFormik({
     initialValues: {
       name: "",
       email: "",
       phone: null,
     },
-    onSubmit: (data) => {
-      console.log(data);
-    },
+
     validationSchema: Yup.object().shape({
       name: Yup.string()
         .required("This field is mandatory.")
