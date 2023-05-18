@@ -28,7 +28,7 @@ https://github.com/LucasDavid95/CODER-REACT.JS.git
 
 ---
 
-## To make this project functional you will need this enviorment variables:
+## In order to make this project functional you will need this enviorment variables:
 
 - REACT_APP_APIKEY=
 - REACT_APP_AUTHDOMAIN=
