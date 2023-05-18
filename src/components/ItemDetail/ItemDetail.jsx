@@ -16,13 +16,27 @@ const ItemDetail = ({ product, onAdd, totalQuantity }) => {
       <h2 style={{ marginBottom: "2rem", color: "#2196f3" }}>
         US${product.price}
       </h2>
-      <div className={{ display: "flex" }}>
-        <CounterContainer
-          stock={product.stock}
-          onAdd={onAdd}
-          initial={totalQuantity}
-        />
-      </div>
+      {product.stock > 0 ? (
+        <div className={{ display: "flex" }}>
+          <CounterContainer
+            stock={product.stock}
+            onAdd={onAdd}
+            initial={totalQuantity}
+          />
+        </div>
+      ) : (
+        <h2
+          style={{
+            border: "5px solid red",
+            borderRadius: "5px",
+            color: "white",
+            background: "red",
+            marginBottom: "3rem",
+          }}
+        >
+          Out of Stock
+        </h2>
+      )}
       <Link to="/">
         <Button variant="contained">Return</Button>
       </Link>
