@@ -39,7 +39,7 @@ https://github.com/LucasDavid95/CODER-REACT.JS.git
 
 ---
 
-## How to make this functional:
+## How to make it functional:
 
 Create a collection in FIREBASE called "products" with the following properties. Do not forget to generate automatically the ID of the product on the collection with Firebase.
 
