@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import { PacmanLoader } from "react-spinners";
 import { db } from "../../firebaseConfig";
 
 import { getDocs, collection, query, where } from "firebase/firestore";
@@ -48,9 +47,7 @@ const ItemListContainer = () => {
           height: "100vh",
           marginTop: "10rem",
         }}
-      >
-        <PacmanLoader color="#000" size={40} />
-      </div>
+      ></div>
     );
   }
 
